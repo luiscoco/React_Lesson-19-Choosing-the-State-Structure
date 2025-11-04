@@ -1,0 +1,140 @@
+:root {
+  --bg: #0b1020;
+  --panel: #111834;
+  --text: #e6ebff;
+  --muted: #b9c2e1;
+  --accent: #66b2ff;
+  --accent-2: #7ef0c1;
+  --ring: rgba(102, 178, 255, 0.35);
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: radial-gradient(1200px 800px at 10% -10%, rgba(102,178,255,0.08), transparent 60%),
+              radial-gradient(1000px 700px at 90% 20%, rgba(126,240,193,0.08), transparent 60%),
+              var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
+
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  backdrop-filter: blur(6px);
+  padding: 1rem;
+}
+
+h1 {
+  grid-column: 1 / -1;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  margin: 0 0 0.75rem;
+  font-size: 1.75rem;
+}
+
+.sub {
+  grid-column: 1 / -1;
+  margin-top: -0.25rem;
+  margin-bottom: 1rem;
+  color: var(--muted);
+}
+
+.list button {
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 0.5rem 0.75rem;
+  margin: 0.125rem 0;
+  width: 100%;
+  text-align: left;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+.list button:hover {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.2);
+  transform: translateY(-1px);
+}
+.list .lvl-0 { font-weight: 700; }
+.list .lvl-1 { padding-left: 0.75rem; }
+.list .lvl-2 { padding-left: 1.5rem; }
+
+.detail p {
+  margin: 0.25rem 0 0.5rem;
+  color: var(--muted);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.03);
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+form label {
+  display: grid;
+  gap: 0.25rem;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+input, select {
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(2,5,18,0.5);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 0.6rem 0.75rem;
+  outline: none;
+  box-shadow: 0 0 0 0 var(--ring);
+  transition: box-shadow 120ms ease, border-color 120ms ease, background 120ms ease;
+}
+input:focus, select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--ring);
+  background: rgba(2,5,18,0.66);
+}
+button.primary {
+  background: linear-gradient(180deg, rgba(102,178,255,0.3), rgba(102,178,255,0.15));
+  border: 1px solid rgba(102,178,255,0.45);
+  color: var(--text);
+  padding: 0.6rem 0.9rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 120ms ease, filter 120ms ease;
+}
+button.primary[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+button.primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.footer {
+  grid-column: 1 / -1;
+  margin-top: 0.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
